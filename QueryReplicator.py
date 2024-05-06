@@ -8,7 +8,6 @@
 #    return bancos_empresas
 
 def main():
-
     # Está hardcoded por praticidade eventual.
     # Para inserir os nomes das Empresas e Bancos,
     # descomente a função input_bancos_empresas() e
@@ -27,8 +26,10 @@ def main():
         "Embaquali Louveira": "embaquali"
     }
 
-    print("Lembre-se de substituir o nome da empresa e do banco por {company} e {database} na query")
-    query = input("Insira sua query aqui:")
+    with open(
+            "C:/Users/andre/OneDrive/Documentos/CM Partners/Qualipol/Contas a Receber_Teste.txt",
+            "r") as query:
+        query = query.read()
 
     queries_atualizadas = []
     for empresa in bancos_empresas:
